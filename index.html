@@ -113,8 +113,6 @@ if (userGuess === "a" || userGuess === "i" || userGuess === "o" || userGuess ===
             // Display the user and computer guesses, and wins/losses/ties.
             youwinText.textContent = "YOU WIN!";
             userChoiceText.textContent = "You chose: " + userGuess;
-            computerChoiceText.textContent = "The computer chose: " + computerGuess;
-            computerChoiceText.textContent = "";
             guessesLeftText.textContent = "Guesses left: " + guessesLeft;
             winsText.textContent = "wins: " + wins;
             lossesText.textContent = "losses: " + losses;
@@ -122,7 +120,7 @@ if (userGuess === "a" || userGuess === "i" || userGuess === "o" || userGuess ===
 
             
           }
-          else if (guessesLeft === 0 ){
+          else if (guessesLeft < 1 ){
 
             losses = losses + 1;
                      
