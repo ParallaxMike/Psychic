@@ -16,7 +16,6 @@
         <p id="guess-text"></p>
         <p id="wins-text"></p>
         <p id="losses-text"></p>
-        <p id="ties-text"></p>
       </div>
 
 
@@ -24,12 +23,10 @@
    
         // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
         var computerChoices = ["a", "e", "i", "o","u", "y"];
-        var regex = /[A-Za-z]/
     
         // Creating variables to hold the number of wins, losses, and ties. They start at 0.
         var wins = 0;
         var losses = 0;
-        var ties = 0;
         var guessesLeft = 4;
         var winState = false; 
     
@@ -42,7 +39,7 @@
         var guessesLeftText = document.getElementById("guess-text");
         var winsText = document.getElementById("wins-text");
         var lossesText = document.getElementById("losses-text");
-        var tiesText = document.getElementById("ties-text");
+ 
 
         youwinText.textContent = "";
 
@@ -61,13 +58,13 @@
 
             directionsText.textContent = "Psychic Game: Choose a letter: ";
             youwinText.textContent = "";
-            directionsText.textContent = "Press any key to play again!"
+            directionsText.textContent = "Press any vowel to play again!"
             userChoiceText.textContent = "You chose: " + userGuess;
             computerChoiceText.textContent = "The computer chose: " + computerGuess;
             guessesLeftText.textContent = "Guesses left: " + guessesLeft;
             winsText.textContent = "wins: " + wins;
             lossesText.textContent = "losses: " + losses;
-            tiesText.textContent = "ties: " + ties;
+
 
         reguess();
             }
@@ -101,7 +98,7 @@ if (userGuess === "a" || userGuess === "i" || userGuess === "o" || userGuess ===
             guessesLeftText.textContent = "Guesses left: " + guessesLeft;
             winsText.textContent = "wins: " + wins;
             lossesText.textContent = "losses: " + losses;
-            tiesText.textContent = "ties: " + ties;
+
           }
           else if ((userGuess === computerGuess) && (guessesLeft !== 0) && (winState===false)) {
 
@@ -116,11 +113,12 @@ if (userGuess === "a" || userGuess === "i" || userGuess === "o" || userGuess ===
             // Display the user and computer guesses, and wins/losses/ties.
             youwinText.textContent = "YOU WIN!";
             userChoiceText.textContent = "You chose: " + userGuess;
+            computerChoiceText.textContent = "The computer chose: " + computerGuess;
             computerChoiceText.textContent = "";
             guessesLeftText.textContent = "Guesses left: " + guessesLeft;
             winsText.textContent = "wins: " + wins;
             lossesText.textContent = "losses: " + losses;
-            tiesText.textContent = "ties: " + ties;
+
 
             
           }
